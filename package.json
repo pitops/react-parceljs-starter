@@ -24,8 +24,8 @@
     "linters": {
       "src/**/*.js": [
         "prettier-standard",
-        "git add",
-        "jest"
+        "jest --bail",
+        "git add"
       ]
     }
   },
