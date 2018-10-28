@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "lint": "eslint src/* --fix",
+    "lint": "eslint src/*.js",
+    "lint-fix": "eslint src/*.js --fix",
     "serve": "parcel index.html --open",
     "build": "parcel build index.html -d dist"
   },
@@ -39,6 +40,7 @@
     "eslint": "^5.8.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
@@ -56,8 +58,5 @@
     "autoprefixer": "^9.3.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
-  },
-  "standard": {
-    "parser": "babel-eslint"
   }
 }

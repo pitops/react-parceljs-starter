@@ -7,13 +7,15 @@
     },
     "extends": [
         "standard",
+        "plugin:jsx-a11y/recommended",
         "plugin:react/recommended"
     ],
     "plugins": [
         "import",
         "node",
         "promise",
-        "react"
+        "react",
+        "jsx-a11y"
     ],
     "env": {
         "node": true

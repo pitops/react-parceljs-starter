@@ -10,7 +10,7 @@ This is a barebones starter for those who want to start developing quickly witho
 
 💛 AutoPrefixer
 
-💛 ES7 +
+💛 ES7+ support
 
 💛 ENV Variables
 
