@@ -8,7 +8,12 @@
     "lint": "eslint src/*.js",
     "lint-fix": "eslint src/*.js --fix",
     "serve": "parcel index.html --open",
-    "build": "parcel build index.html -d dist"
+    "clean-build": "rimraf dist",
+    "build": "npm run clean-build && parcel build index.html -d dist",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "clean-coverage": "rimraf src/tests-reports",
+    "coverage": "npm run clean-coverage && jest --coverage"
   },
   "husky": {
     "hooks": {
@@ -19,7 +24,8 @@
     "linters": {
       "src/**/*.js": [
         "prettier-standard",
-        "git add"
+        "git add",
+        "jest"
       ]
     }
   },
@@ -30,26 +36,51 @@
     "ReactJS",
     "React starter"
   ],
+  "jest": {
+    "setupTestFrameworkScriptFile": "jest-enzyme",
+    "testEnvironment": "enzyme",
+    "testEnvironmentOptions": {
+      "enzymeAdapter": "react16"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
+    "coverageDirectory": "src/tests-reports",
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
+  },
   "author": "Petros Kyriakou",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "eslint": "^5.8.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.26.2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^1.1.2",
+    "jest": "^23.6.0",
+    "jest-environment-enzyme": "^7.0.0",
+    "jest-enzyme": "^7.0.0",
     "lint-staged": "^7.3.0",
     "parcel-bundler": "^1.10.3",
     "prettier-standard": "^8.0.1",
     "prop-types": "^15.6.2",
+    "react-test-renderer": "^16.6.0",
     "sass": "^1.14.3"
   },
   "dependencies": {
@@ -57,6 +88,7 @@
     "@babel/runtime-corejs2": "^7.1.2",
     "autoprefixer": "^9.3.1",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "rimraf": "^2.6.2"
   }
 }
