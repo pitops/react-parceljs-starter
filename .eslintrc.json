@@ -1,0 +1,21 @@
+{
+    "parser": "babel-eslint",
+    "settings": {
+        "react": {
+            "version": "16.6.0"
+        }
+    },
+    "extends": [
+        "standard",
+        "plugin:react/recommended"
+    ],
+    "plugins": [
+        "import",
+        "node",
+        "promise",
+        "react"
+    ],
+    "env": {
+        "node": true
+    }
+}

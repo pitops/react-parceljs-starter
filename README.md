@@ -14,6 +14,12 @@ This is a barebones starter for those who want to start developing quickly witho
 
 💛 ENV Variables
 
+💛 Linting using [Standard](https://standardjs.com/)
+
+💛 PropTypes
+
+💛 Pre-commit hook for linting and prettyfying files
+
 ### Setup
 
 ```bash
