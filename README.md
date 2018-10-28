@@ -18,7 +18,11 @@ This is a barebones starter for those who want to start developing quickly witho
 
 💛 PropTypes
 
-💛 Pre-commit hook for linting and prettyfying files
+💛 Pre-commit hook for linting, prettyfying files and testing
+
+💛 Jest
+
+💛 Enzyme
 
 ### Setup
 
