@@ -6,14 +6,14 @@
   "scripts": {
     "start": "parcel index.html",
     "lint": "eslint src/*.js",
-    "lint-fix": "eslint src/*.js --fix",
+    "lint:fix": "eslint src/*.js --fix",
     "serve": "parcel index.html --open",
-    "clean-build": "rimraf dist",
-    "build": "npm run clean-build && parcel build index.html -d dist",
+    "build": "npm run clean:build && parcel build index.html -d dist",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "clean-coverage": "rimraf src/tests-reports",
-    "coverage": "npm run clean-coverage && jest --coverage"
+    "clean:build": "rimraf dist",
+    "clean:coverage": "rimraf src/tests-reports",
+    "coverage": "npm run clean:coverage && jest --coverage"
   },
   "husky": {
     "hooks": {
@@ -43,13 +43,18 @@
       "enzymeAdapter": "react16"
     },
     "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/index.js"
+      "src/**/*.{js,jsx,mjs}"
     ],
     "coverageDirectory": "src/tests-reports",
     "coverageReporters": [
       "html",
       "text"
+    ],
+    "testMatch": [
+      "**/?(*.)(spec|test).{js,jsx,mjs}"
+    ],
+    "roots": [
+      "<rootDir>/src"
     ]
   },
   "author": "Petros Kyriakou",
