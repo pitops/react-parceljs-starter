@@ -24,6 +24,8 @@ This is a barebones starter for those who want to start developing quickly witho
 
 💛 Enzyme
 
+💛 Automatically watch and move static files from public directory
+
 ### Setup
 
 ```bash

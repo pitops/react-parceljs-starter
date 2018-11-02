@@ -3,18 +3,30 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "author": "Petros Kyriakou",
+  "license": "ISC",
+  "keywords": [
+    "babel7",
+    "ParcelJS",
+    "ES2018",
+    "ReactJS",
+    "React starter"
+  ],
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel src/index.html",
     "lint": "eslint src/*.js",
     "lint:fix": "eslint src/*.js --fix",
-    "serve": "parcel index.html --open",
-    "build": "npm run clean:build && parcel build index.html -d dist",
+    "serve": "parcel src/index.html --open",
+    "build": "npm run clean:build && parcel build src/index.html --public-url './' -d dist",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "clean:build": "rimraf dist",
     "clean:coverage": "rimraf src/tests-reports",
     "coverage": "npm run clean:coverage && jest --coverage"
   },
+  "staticPath": [
+    "public"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -29,13 +41,6 @@
       ]
     }
   },
-  "keywords": [
-    "babel7",
-    "ParcelJS",
-    "ES2018",
-    "ReactJS",
-    "React starter"
-  ],
   "jest": {
     "setupTestFrameworkScriptFile": "jest-enzyme",
     "testEnvironment": "enzyme",
@@ -51,14 +56,21 @@
       "text"
     ],
     "testMatch": [
+      "__tests__/**/*.{js,jsx,mjs}",
       "**/?(*.)(spec|test).{js,jsx,mjs}"
     ],
     "roots": [
       "<rootDir>/src"
     ]
   },
-  "author": "Petros Kyriakou",
-  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.1.0",
+    "@babel/runtime-corejs2": "^7.1.2",
+    "autoprefixer": "^9.3.1",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "rimraf": "^2.6.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-transform-runtime": "^7.1.0",
@@ -83,17 +95,10 @@
     "jest-enzyme": "^7.0.0",
     "lint-staged": "^7.3.0",
     "parcel-bundler": "^1.10.3",
+    "parcel-plugin-static-files-copy": "^1.2.4",
     "prettier-standard": "^8.0.1",
     "prop-types": "^15.6.2",
     "react-test-renderer": "^16.6.0",
     "sass": "^1.14.3"
-  },
-  "dependencies": {
-    "@babel/preset-env": "^7.1.0",
-    "@babel/runtime-corejs2": "^7.1.2",
-    "autoprefixer": "^9.3.1",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "rimraf": "^2.6.2"
   }
 }
