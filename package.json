@@ -1,7 +1,7 @@
 {
   "name": "react-parcel",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "ReactJS and ParcelJS starter",
   "main": "index.js",
   "author": "Petros Kyriakou",
   "license": "ISC",
@@ -54,10 +54,6 @@
     "coverageReporters": [
       "html",
       "text"
-    ],
-    "testMatch": [
-      "__tests__/**/*.{js,jsx,mjs}",
-      "**/?(*.)(spec|test).{js,jsx,mjs}"
     ],
     "roots": [
       "<rootDir>/src"
