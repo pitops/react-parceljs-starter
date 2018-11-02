@@ -36,7 +36,7 @@
     "linters": {
       "src/**/*.js": [
         "prettier-standard",
-        "jest --bail",
+        "jest --bail --findRelatedTests",
         "git add"
       ]
     }
