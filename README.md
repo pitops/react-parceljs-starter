@@ -1,5 +1,7 @@
 # ReactJS starter with ParcelJS
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pitops/react-parceljs-starter.svg)](https://greenkeeper.io/)
+
 This is a barebones starter for those who want to start developing quickly without getting distracted from tedious tasks.
 
 ### Includes
